@@ -1,4 +1,5 @@
 const modelUsuario = require('../Models/modelUsuario')
+const jwt = require('jsonwebtoken')
 exports.getUsuarios =async (req,res)=>{
     const p = await modelUsuario.find()
     res.send(p)
