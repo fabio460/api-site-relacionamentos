@@ -4,6 +4,7 @@ const conexao = require('./conexao')
 conexao()
 const rota = require('./Rotas')
 const app = express()
-app.use(rota)
 app.use(cors())
+app.use(rota)
+
 app.listen('4000')
