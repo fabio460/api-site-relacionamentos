@@ -1,9 +1,9 @@
 const express = require('express')
-const { get } = require('mongoose')
+const cors = require('cors')
 const conexao = require('./conexao')
 conexao()
 const rota = require('./Rotas')
 const app = express()
 app.use(rota)
-
+app.use(cors())
 app.listen('4000')

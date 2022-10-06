@@ -6,11 +6,15 @@ exports.getUsuarios =async (req,res)=>{
 }
 
 exports.setUsuarios = (req,res)=>{
+  var imagem = ''
+  if (req.file) {
+    imagem = req.file.location
+  }
   modelUsuario.create({
     nome:req.body.nome,
     email:req.body.email,
     senha:req.body.senha,
-    imagemPerfil:req.file.location,
+    imagemPerfil:imagem,
     cidade:req.body.cidade,
     bairro:req.body.bairro,
     estado:req.body.estado,
@@ -24,10 +28,8 @@ exports.setUsuarios = (req,res)=>{
     observacoesFinais:req.body.observacoesFinais,
     outrasHabilidades:req.body.outrasHabilidades,
   })
-  console.log(req.file)
-
-
-  res.send(req.file)
+  
+  res.send('ss')
 }
 
 exports.autenticarCliente = async (req,res)=>{
