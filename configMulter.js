@@ -11,7 +11,7 @@ aws.config.update({
 var upload = multer({
   storage: multerS3({
     s3: new aws.S3(),
-    bucket: process.env.BUCKET,
+    bucket: 'imagensperfi',
     acl: 'public-read',
     contentType: multerS3.AUTO_CONTENT_TYPE,
     key: function (req, file, cb) {
