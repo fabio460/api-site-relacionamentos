@@ -4,9 +4,9 @@ var multer = require('multer')
 var multerS3 = require('multer-s3')
 const crypto = require('crypto')
 aws.config.update({
-    accessKeyId:process.env.ACCESS_KEY,
-    secretAccessKey:process.env.ACCESS_SECRET,
-    region:process.env.REGION
+    accessKeyId:'AKIA2QECU5ZFBMIBO3WY',
+    secretAccessKey:'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',
+    region:'us-east-1'
 })
 var upload = multer({
   storage: multerS3({
