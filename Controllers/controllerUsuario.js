@@ -2,6 +2,10 @@ const modelUsuario = require('../Models/modelUsuario')
 const jwt = require('jsonwebtoken')
 var aws = require('aws-sdk')
 require('dotenv').config()
+
+
+
+
 exports.getUsuarios =async (req,res)=>{
     const p = await modelUsuario.find()
     res.send(p)
@@ -109,4 +113,9 @@ exports.autenticarCliente = async (req,res)=>{
      usuario:user
    })
  }
+}
+
+exports.uploadImagemFirebase = (req,res)=>{
+  
+  res.json(req.files)
 }
