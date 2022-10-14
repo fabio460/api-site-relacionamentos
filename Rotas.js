@@ -34,6 +34,7 @@ rota.get('/',(req,res)=>{
     res.send('<h1>back-end rodando ...</h1>')
 })
 rota.get('/getUsuarios',controllerUsuario.getUsuarios)
+rota.post('/getUsuarioPorId',upload.single('imagemPerfil'),controllerUsuario.getUsuarioPorId)
 rota.post('/jwt',upload.single('avatar'),controllerUsuario.autenticarCliente)
 rota.post('/setUsuario',upload.single('imagemPerfil'),controllerUsuario.setUsuarios)
 

@@ -6,6 +6,14 @@ exports.getUsuarios =async (req,res)=>{
     const p = await modelUsuario.find()
     res.send(p)
 }
+exports.getUsuarioPorId =async (req,res)=>{
+  const p = await modelUsuario.find({
+    _id:req.body.id
+  })
+  res.send(p)
+}
+
+
 
 exports.setUsuarios = (req,res)=>{
   var imagem = ''
