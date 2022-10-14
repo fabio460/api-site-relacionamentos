@@ -35,6 +35,7 @@ rota.get('/',(req,res)=>{
 })
 rota.get('/getUsuarios',controllerUsuario.getUsuarios)
 rota.post('/getUsuarioPorId',upload.single('imagemPerfil'),controllerUsuario.getUsuarioPorId)
+rota.post('/getUsuarioPorEmail',upload.single('imagemPerfil'),controllerUsuario.getUsuarioPorEmail)
 rota.post('/jwt',upload.single('avatar'),controllerUsuario.autenticarCliente)
 rota.post('/setUsuario',upload.single('imagemPerfil'),controllerUsuario.setUsuarios)
 

@@ -13,7 +13,12 @@ exports.getUsuarioPorId =async (req,res)=>{
   res.send(p)
 }
 
-
+exports.getUsuarioPorEmail =async (req,res)=>{
+  const p = await modelUsuario.find({
+    email:req.body.email
+  })
+  res.send(p)
+}
 
 exports.setUsuarios = (req,res)=>{
   var imagem = ''
