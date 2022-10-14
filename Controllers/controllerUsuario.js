@@ -1,10 +1,6 @@
 const modelUsuario = require('../Models/modelUsuario')
 const jwt = require('jsonwebtoken')
 var aws = require('aws-sdk')
-require('dotenv').config()
-
-
-
 
 exports.getUsuarios =async (req,res)=>{
     const p = await modelUsuario.find()
