@@ -18,21 +18,21 @@ const  WebSocket = (app)=> {
         let model =await modelChat.find()
         
         let m = await msg
-        return model
+        return m
     }    
 
     io.on("connection",async (socket) => {
         socket.on("msg",msg=>{
            mensagens.push(msg)
            //console.log(msg)
-           modelChat.create({
-            room:msg.room,
-            idEmissor:msg.idEmissor,
-            idReceptor:msg.idReceptor,     
-            enviadoPor:msg.enviadoPor,
-            recebidoPor:msg.recebidoPor,
-            bodyMsg:msg.bodyMsg,
-           })
+        //    modelChat.create({
+        //     room:msg.room,
+        //     idEmissor:msg.idEmissor,
+        //     idReceptor:msg.idReceptor,     
+        //     enviadoPor:msg.enviadoPor,
+        //     recebidoPor:msg.recebidoPor,
+        //     bodyMsg:msg.bodyMsg,
+        //    })
         })
         let mensMongo = await getMsg(mensagens)
        // console.log(mensMongo)
