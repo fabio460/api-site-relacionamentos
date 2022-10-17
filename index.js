@@ -4,8 +4,7 @@ const conexao = require('./conexao')
 conexao()
 const rota = require('./Rotas')
 const app = express()
-const cors = require("cors");
-app.use(cors());
+
 app.use(rota)
 
 const WebSocket = require('./WebSocket')
