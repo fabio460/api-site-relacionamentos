@@ -10,8 +10,7 @@ const  WebSocket = (app)=> {
             methods: ["GET", "POST"],
         },
     });
-    const cors = require("cors");
-    app.use(cors());
+
     let mensagens = []
 
     async function getMsg(msg) {

@@ -11,3 +11,6 @@ const WebSocket = require('./WebSocket')
 WebSocket(app).listen(4000, () => {
   console.log("Servidor rodando...");
 });
+
+const cors = require("cors");
+app.use(cors());
