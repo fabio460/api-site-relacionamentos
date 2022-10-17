@@ -4,14 +4,15 @@ const modelChat = require('./Models/modelChat')
 
 const  WebSocket = (app)=> {
     const server = http.createServer(app);
-    const io = new Server(server, {
-        cors: {
-            // origin: "http://localhost:3000",
-            // methods: ["GET", "POST"],
-        },
-    });
     const cors = require("cors");
     app.use(cors());
+    const io = new Server(server, {
+        cors: {
+            origin: "http://localhost:3000",
+            methods: ["GET", "POST"],
+        },
+    });
+
     let mensagens = []
 
     async function getMsg(msg) {
