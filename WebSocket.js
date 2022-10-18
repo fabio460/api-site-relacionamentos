@@ -8,8 +8,12 @@ const  WebSocket = (app)=> {
         cors: {
             origin: "*",
             methods: ["GET", "POST"],
-            
-           credentials: false
+            allowedHeaders: ["my-custom-header"],
+            credentials: false,
+            allowRequest: (req, callback) => {
+                const noOriginHeader = req.headers.origin === undefined;
+                callback(null, noOriginHeader);
+              }
         },
         // cors: {
         //     origin: "https://site-relacionamentos-fabio460.vercel.app/",
