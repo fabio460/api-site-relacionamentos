@@ -5,18 +5,18 @@ const modelChat = require('./Models/modelChat')
 const  WebSocket = (app)=> {
     const server = http.createServer(app);
     const io = new Server(server, {
+        cors: {
+            origin: "*",
+            methods: ["GET", "POST"],
+            
+           credentials: false
+        },
         // cors: {
-        //     origin: "*",
+        //     origin: "https://site-relacionamentos-fabio460.vercel.app/",
         //     methods: ["GET", "POST"],
         //     allowedHeaders: ["my-custom-header"],
         //     credentials: true
         // },
-        cors: {
-            origin: "https://site-relacionamentos-fabio460.vercel.app/",
-            methods: ["GET", "POST"],
-            allowedHeaders: ["my-custom-header"],
-            credentials: true
-        },
     });
 
     let mensagens = []
