@@ -10,7 +10,7 @@ app.use(rota)
 
 
 const WebSocket = require('./WebSocket')
-WebSocket(app).listen(4000, () => {
+app.listen(4000, () => {
   console.log("Servidor rodando...");
 });
 
