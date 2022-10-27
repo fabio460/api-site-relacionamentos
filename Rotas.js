@@ -1,7 +1,19 @@
 const rota = require('express').Router()
+const { Uploader } = require("uploader");
+const uploader = Uploader({
+  apiKey: "free"
+});
 
-
-
+//  uploader.open('imagem').then(files => {
+//   if (files.length === 0) {
+//     console.log('No files selected.')
+//   } else {
+//     console.log('Files uploaded:');
+//     console.log(files.map(f => f.fileUrl));
+//   }
+// }).catch(err => {
+//   console.error(err);
+// });
 
 
 
@@ -15,9 +27,9 @@ const FirebaseStorage = require('multer-firebase-storage')
 
   var multerGoogleStorage = require("multer-cloud-storage");
 
-  var uploadHandler = multer({
-    storage: multerGoogleStorage.storageEngine()
-  });
+  // var uploadHandler = multer({
+  //   storage: multerGoogleStorage.storageEngine()
+  // });
 
 const upload = require('./configMulter')
 const controllerUsuario = require('./Controllers/controllerUsuario')
@@ -32,5 +44,5 @@ rota.post('/setUsuario',upload.single('imagemPerfil'),controllerUsuario.setUsuar
 
 rota.put('/updateUsuario',upload.single('imagemPerfil'),controllerUsuario.updateUsuario)
 rota.delete('/removerConta',upload.single('imagemPerfil'),controllerUsuario.removerConta)
-rota.post('/upload',uploadHandler.any(),controllerUsuario.uploadImagemFirebase)
+// rota.post('/upload',uploadHandler.any(),controllerUsuario.uploadImagemFirebase)
 module.exports = rota
